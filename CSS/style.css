@@ -1,113 +1,311 @@
+/* ตั้งค่าพื้นฐานของเว็บไซต์ */
 body {
-      font-family: "Noto Sans Thai", sans-serif;
-      background-color: #f8f4ec;
-      color: #3e382f;
-    }
+  font-family: "Noto Sans Thai", sans-serif;
+  background-color: #f8f4ec;
+  color: #3e382f;
+}
 
-    .navbar {
-      background-color: #f8f4ec;
-    }
+/* Navbar */
+.navbar {
+  background-color: #f8f4ec;
+}
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(circle at 90% 20%, #dce4d5 0, transparent 25%),
-        #f8f4ec;
-    }
+/* =========================
+   ส่วน Hero
+========================= */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #ffffff;
+  min-height: 850px;
+  padding: 90px 0;
+  display: flex;
+  align-items: center;
+}
 
-    hero-title {
-      font-size: clamp(2.5rem, 6vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.15;
-      color: #3e382f;
-    }
+/* ภาพแมวตกแต่งพื้นหลัง */
+.hero-decoration {
+  position: absolute;
+  z-index: 0;
+  right: -5%;
+  left: auto;
+  bottom: 0;
+  width: 72%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.20;
+  pointer-events: none;
+}
 
-    hero-subtitle {
-      color: #817565;
-      font-size: 1.15rem;
-    }
+/* เนื้อหา Hero */
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
 
-    section-number {
-      color: #8b9a7a;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
+/* หัวข้อหลัก */
+.hero-title {
+  font-size: clamp(3rem, 4vw, 4rem);
+  font-weight: 800;
+  line-height: 1.4;
+  color: #3e382f;
+  margin-bottom: 25px;
+}
 
-    section-title {
-      font-weight: 800;
-      line-height: 1.3;
-    }
+/* ชื่อผู้เขียน */
+.hero-author {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-    book-cover {
-      max-height: 520px;
-      width: auto;
-      box-shadow: 20px 25px 50px rgba(62, 56, 47, .18);
-      border-radius: 8px;
-    }
+/* คำโปรย */
+.hero-subtitle {
+  color: #817565;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+}
 
-    soft-card {
-      background-color: #fffdf8;
-      border: 0;
-      border-radius: 24px;
-      box-shadow: 0 10px 35px rgba(62, 56, 47, .08);
-      transition: .3s ease;
-    }
+/* รายละเอียดหนังสือ */
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
 
-    soft-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 45px rgba(62, 56, 47, .14);
-    }
+/* ปุ่ม */
+.btn-book {
+  background-color: #D69A7B;
+  color: white;
+  border-radius: 50px;
+  padding: 16px 36px;
+  border: 0;
+  font-size: 1.05rem;
+}
 
-    icon-box {
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #e4eadf;
-      font-size: 1.8rem;
-    }
+.btn-book:hover {
+  background-color: #BC8064;
+  color: white;
+}
 
-    quote-section {
-      background-color: #66745b;
-      color: white;
-    }
+/* =========================
+   รูปปกและกรอบหนังสือ
+========================= */
 
-    .quote {
-      font-size: clamp(1.8rem, 4vw, 3.5rem);
-      font-weight: 700;
-      line-height: 1.4;
-    }
+/* กรอบรูปปกหนังสือ */
+.hero .book-frame {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #e5dfd2;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(62, 56, 47, 0.12);
+}
 
-    benefit-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #b1bba5;
-    }
+/* รูปปกหนังสือ */
+.book-cover {
+  display: block;
+  max-height: 450px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 15px 20px 40px rgba(62, 56, 47, 0.12);
+}
 
-    cta-section {
-      background-color: #ded8c9;
-    }
+/* ขยายรูปปกเฉพาะใน Hero */
+.hero .book-cover {
+  max-height: 600px;
+  opacity: 1;
+  filter: none;
+  box-shadow: none;
+}
 
-    btn-book {
-      background-color: #66745b;
-      color: white;
-      border-radius: 50px;
-      padding: 13px 30px;
-      border: 0;
-    }
+/* =========================
+   ส่วนเนื้อหาอื่น ๆ
+========================= */
 
-    btn-book:hover {
-      background-color: #4f5c47;
-      color: white;
-    }
+/* หมายเลขหัวข้อ */
+.section-number {
+  color: #D69A7B;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 
-    .divider {
-      width: 70px;
-      height: 4px;
-      background-color: #9ca98e;
-      border-radius: 10px;
-    }
+/* หัวข้อแต่ละส่วน */
+.section-title {
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+/* การ์ด */
+.soft-card {
+  background-color: #fffdf8;
+  border: 0;
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(62, 56, 47, 0.08);
+  transition: 0.3s ease;
+}
+
+.soft-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(62, 56, 47, 0.14);
+}
+
+/* กล่องไอคอน */
+.icon-box {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5E5DC;
+  font-size: 1.8rem;
+}
+
+/* ส่วนคำคม */
+.quote-section {
+  background-color: #D69A7B;
+  color: white;
+}
+
+.quote {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ตัวเลขประโยชน์ */
+.benefit-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #E7BBA2;
+}
+
+/* ส่วนปิดท้าย */
+.cta-section {
+  background-color: #EBCFC0;
+}
+
+/* เส้นตกแต่ง */
+.divider {
+  width: 70px;
+  height: 4px;
+  background-color: #D69A7B;
+  border-radius: 10px;
+}
+
+/* =========================
+   รองรับหน้าจอมือถือ
+========================= */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 50px 0;
+    min-height: auto;
+  }
+
+  /* ภาพแมวตกแต่งบนมือถือ */
+  .hero-decoration {
+    width: 100%;
+    right: -15%;
+    left: auto;
+    bottom: 0;
+    opacity: 0.12;
+  }
+
+  /* หัวข้อหลัก */
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  /* ชื่อผู้เขียน */
+  .hero-author {
+    font-size: 1rem;
+  }
+
+  /* คำโปรย */
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  /* รายละเอียดหนังสือ */
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 22px;
+  }
+
+  /* กรอบหนังสือ */
+  .hero .book-frame {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  /* รูปปกหนังสือ */
+  .hero .book-cover {
+    max-height: 450px;
+  }
+}
+
+/* =========================
+   ส่วนคำถามที่พบบ่อย (FAQ)
+========================= */
+
+.accordion-item {
+  border: 1px solid #e5dfd2;
+  border-radius: 12px !important;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #fffdf8;
+}
+
+.accordion-button {
+  background-color: #fffdf8;
+  color: #3e382f;
+  font-family: "Noto Sans Thai", sans-serif;
+  font-weight: 600;
+  padding: 20px;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #F5E5DC;
+  color: #3e382f;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: #D69A7B;
+}
+
+.accordion-body {
+  background-color: #fffdf8;
+  color: #6f685d;
+  line-height: 1.9;
+  padding: 20px;
+}
+
+/* รองรับมือถือ */
+@media (max-width: 768px) {
+  .accordion-button {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+
+  .accordion-body {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+}
